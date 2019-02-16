@@ -1,0 +1,10 @@
+ifconfig --> List the all the network interfaces
+ifconfig wlan0(interface) down --> Interface service defined will be brought down
+ifconfig wlan0(interface) up --> Interface service defined will brought up
+ifconfig wlan0(interface) hw ether 00:11:22:33:44:55(changed MAC) --> HardWare address will be changed to provided address
+
+iwconfig --> List all the wireless network interfaces
+iwconfig wlan0 mode monitor --> Command to enable the monitor mode on wireless adapter
+
+airmon-ng check kill --> program to kill the running interface.
+airodump-ng wlan0(Interface) --> Lists all available wireless network in range and provides important information.
