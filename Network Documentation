@@ -1,0 +1,16 @@
+airodump-ng wlan0--> Give below information
+      BSSID          PWR  Beacons    #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID
+                                                                                                                                                                                                                                                                                                                                            
+ 6E:B0:66:EE:57:70  -36        0        0    0   6  195  OPN              xfinitywifi
+ 
+ BSSID : MAC Address of wireless router
+ PWR : Power/Signal Range Higher number has high range.
+ Beacons : Frames Sent by n/w to broadcast its existince. Hidden N/w also will sends this frames
+ Data : 
+ #/s : Data Packets collected
+ CH : Channel on wihch N/W works on
+ MB : Maximum Speed Supported by N/W
+ ENC : Encryption Used by N/W. [ WPA, WEP, WPA2, OPN ]
+ CIPHER : [CCMP, WEP]
+ AUTH : Authentication Used on N/W [PSK, MGT]
+ ESSID : Name of the Wireless network
