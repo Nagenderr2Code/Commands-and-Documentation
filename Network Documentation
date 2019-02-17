@@ -23,3 +23,7 @@ BSSID              STATION            PWR   Rate    Lost    Frames  Probe
  BSSID : MAC Address of wireless router
  STATION : Devices Connected to Router.
  
+WEP Encryption:
+WEP Encription is OLD method of encryption
+- Uses KEY + IV to decrypt the packets
+- IV is 26 bit unique number 
