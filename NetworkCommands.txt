@@ -8,3 +8,7 @@ iwconfig wlan0 mode monitor --> Command to enable the monitor mode on wireless a
 
 airmon-ng check kill --> program to kill the running interface.
 airodump-ng wlan0(Interface) --> Lists all available wireless network in range and provides important information.
+airodump-ng --bssid 88:AD:43:EB:28:68 --channel 11 --write test wlan0 --> Capture All the packets for the MAC address and respective channel
+
+wireshark --> Command to check the captured data.
+
