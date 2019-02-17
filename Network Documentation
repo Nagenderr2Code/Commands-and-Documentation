@@ -1,4 +1,4 @@
-airodump-ng wlan0--> Give below information
+-airodump-ng wlan0--> Give below information
       BSSID          PWR  Beacons    #Data, #/s  CH  MB   ENC  CIPHER AUTH ESSID
                                                                                                                                                                                                                                                                                                                                             
  6E:B0:66:EE:57:70  -36        0        0    0   6  195  OPN              xfinitywifi
@@ -14,3 +14,12 @@ airodump-ng wlan0--> Give below information
  CIPHER : [CCMP, WEP]
  AUTH : Authentication Used on N/W [PSK, MGT]
  ESSID : Name of the Wireless network
+ 
+ 
+-airodump-ng --bssid 88:AD:43:EB:28:68 --channel 11 --write test wlan0
+BSSID              STATION            PWR   Rate    Lost    Frames  Probe                                                                                                                                                                                                                                                                                                                                        
+ 88:AD:43:EB:28:68  70:70:0D:25:33:02  -33    0 -24      0      200 
+ 
+ BSSID : MAC Address of wireless router
+ STATION : Devices Connected to Router.
+ 
