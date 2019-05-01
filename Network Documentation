@@ -27,3 +27,36 @@ WEP Encryption:
 WEP Encription is OLD method of encryption
 - Uses KEY + IV to decrypt the packets
 - IV is 26 bit unique number 
+
+
+PROTOCOL
+
+FTP :  File Transfer Protocol
+DNS : Domain Name System
+TCP : Tranmission Control Protocol
+SFTP : Secure File Transfer
+HTTP : Hyper Text Transfer Protocol
+IP : Internet Protocol
+
+HTTP Methods: GET/POST/HEAD/TRACE
+Status Code : 100 / 200/ 300/400/500
+Request —
+ GET /REQUEST-URI HTTP/1.1
+HOST: host to connect
+Connection:keep-alive
+User-Agent: Browser/version (Mozilla/5.0)
+Upgrade-Insecure-Requests:
+Accept: text/html, application/json, application/xml, application/xhtml; q=0.9,image/webp,image/apng, */*
+Accept-Encoding: gzip, deflate
+Accept_Language: en-US, en-GB
+DNT:
+
+CONDITIONAL GET: Will fetch the content only if the request content is modified after the specified time.
+GET /sample.html HTTP/1.1
+HOST:example.com
+If-Modified-Since: date-time-zone
+
+Partial GET : Method which is used to get the only specific content.
+GET /movie.mp4/ HTTP/1.1
+HOST: example.com
+Range: bytes= 0-120
