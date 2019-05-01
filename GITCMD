@@ -1,0 +1,28 @@
+ GIT:
+
+Configure Git for the first time:
+
+git config --global user.name "Ettikala, Nagender"
+git config --global user.email "Nagender.Ettikala@mastercard.com"
+
+Clone Repo:
+git clone https://fusion.mastercard.int/stash/scm/~e089763/mc-axoncp-ui.git
+
+
+
+if you already have code ready to be pushed to this repository then run this in your terminal:
+
+cd existing-project
+git init
+git add --all
+git commit -m "Initial Commit"
+git remote add origin https://fusion.mastercard.int/stash/scm/~e089763/mc-axoncp-ui.git
+git push -u origin master
+
+
+If your code is already tracked by Git then set this repository as your "origin" to push to:
+
+cd existing-project
+git remote set-url origin https://fusion.mastercard.int/stash/scm/~e089763/mc-axoncp-ui.git
+git push -u origin --all
+git push origin --tags
