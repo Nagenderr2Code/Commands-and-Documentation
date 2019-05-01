@@ -1,0 +1,36 @@
+Mac Terminal CMD:
+
+Permision : sudo chown -R $(whoami) $(brew --prefix)/*
+
+
+sudo curl -L https://raw.githubusercontent.com/docker/compose/1.23.2/contrib/completion/bash/docker-compose -o /usr/local/Cellar/bash-completion/1.3_3/etc/bash_completion.d/docker-compose
+1. 
+
+
+/usr/local/Cellar/bash-completion/1.3_3
+
+echo $PATH :  will bring the path
+env: will print the env variable
+
+
+
+Java_Home:
+
+$ vim .bash_profile 
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+$ source .bash_profile
+
+$ echo $JAVA_HOME
+/Library/Java/JavaVirtualMachines/1.7.0.jdk/Contents/Home
+
+
+
+Maven path:
+export PATH=/Users/e089763/apache-maven-3.6.0/bin:$PATH
+
+
+Find the PID with port
+
+lsof -n -i4TCP:8080
