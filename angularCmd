@@ -1,0 +1,34 @@
+ANGULAR CMD:
+
+sudo npm install @angular/cli@latest : installs the latest version of angular
+ng new {projectName} : creates the new project will all the required modules
+ng serve : Will start the server on localhost:4200
+
+npm install --save bootstrap@4:  Install the CSS bootstrap in node_moules
+	node_modules/dist/css/bootstrap.min.css : include this in angular.json of section architect section of styles
+ng g c {componentName} : Creates the all the required template for components and also do the necessary imports and DI
+
+
+
+npm install --save-dev @angular/cli@latest : Your global Angular CLI version  is greater than your local
+
+json-server --watch src/assets/forms/tabarrayform.json : Json Server watch
+
+Nigh
+
+ng new saas-selfservice-app
+
+npm i jwt-decode
+npm install --save @ng-bootstrap/ng-bootstrap
+npm install --save @angular/http
+npm install --save @angular/material @angular/cdk @angular/animations
+npm install @angular/flex-layout@v7.0.0-beta.24 rxjs-compat
+npm install ngx-json-viewer
+
+
+ npm config set registry https://artifacts.mastercard.int/artifactory/api/npm/npm-all/
+
+npm global add @mc-dxp/dxp-cli
+
+npm config set registry https://artifacts.mastercard.int/artifactory/api/npm/registry.npmjs.org/
+npm config set @mc-dxp:registry https://artifacts.mastercard.int/artifactory/api/npm/npm-internal-stable
