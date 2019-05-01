@@ -1,0 +1,114 @@
+NGINX:
+
+— ps -ef —forest | grep nginx : cmd to see the number of child processors launched by master processor
+— service nginx reload: CMD to relead the changes conf file
+— cat  /var/run/nginx.pid : gives the process ID of master process
+—  nginx -t : check the correctness of the conf file syntax.
+
+Server Service:
+— service {serviceName/nginx} status : gives the status of ngnix status Stopped/running
+— service {serviceName/nginx}  start : starts the server
+— service {serviceName/nginx}  stop : stops the server
+— service {serviceName/nginx}  restart : stops the server
+
+Reverse Proxy:
+— $http_x_real_ip : logs the clients IP in the admin server 
+— proxy_set_header X-Real-IP $remote_addr :  Sends the ClientIP as part of  header.
+— proxy_set_header Host $host : sets the Host in the request header to backend server
+
+LoadBalancer & Health Checks:
+
+— max_fails=2 fail_timeout=30s ; Passive Health check parameters.
+— health_check : Active monitoring by default makes the get request to upstream servers for every 5s.
+— interval=10 : we change the health check  interval .
+— uri= /{uri} : By default health check happens on / . We change change  this.
+— match= server_test : will does the health check based not he server_test block rules mentioned.
+— zone backend 64k : shared memory for the worker processors. Which stores the nginx status.
+— weight = {someNumber} : specified number of request will sent to the respective server.
+— least_conn : enable the load balancing technique of sending the request to server which has less load
+
+match:  way of configuring the health check to match or not-match word
+
+match server_test{
+Status 200-399;
+body ~ “{wordTomatchWith}” or body !~ “{wordNotTomatchWith}”
+}
+
+ upstream backend{
+	server {IPAdderess_S1} max_fails=2 fail_timeout=30s;
+	server {IPAdderess_S2} max_fails=2 fail_timeout=30s;
+	..so on
+}
+ 
+location /{
+	proxy_pass http://backend;
+}
+
+Static Assets: Below config says, Anything ending with the following extensions should be served from reverseProxy server instead of backend server
+
+location ~* \.(css|js|jpeg|JPG|png){
+    root /var/www/assets;
+    try_files $uri $uri/;
+   }
+
+Access Log: /var/log/nginx/access.log
+access_log /var/log/nginx/{some log.log} {log action}  : we can specify the custom log format and location
+Error logging level : emerg, alert, critics, error, warn, notice, info, debug
+
+Caching & Content-negogiation:
+
+add_header Cache-Control {mech}
+If-modified-since :sends 304 not modified
+
+{mech} : no-cache, no-store , must-revalidate, max-age, s-maxage, expires ; 
+
+WhiteListing:
+
+location /admin{
+ root /var/www/websites/example;
+allow {ipAddress} (or) include {pathToConfigFile}
+deny all;
+}
+
+Limit_Rate 
+
+limit_conn_zone $binary_remote_addr zone=addr:10m; : Can limit the number of connections
+limit_rate {speedWithWhichFileCanBeDownloaded};
+limit_rate_after {sizeAfterSpeedShouldDecrease}
+
+Authentication :
+htpasswd -c /etc/nginx/.htpasswd admin
+auth_basic "Basic Auth”;
+auth_basic_user_file "/etc/nginx/.htpasswd";
+
+GEO-IP:
+rpm -qa | qa GeoIP : Command to check if GeoIp module is installed
+yum -y install GeoIP-devel : Install GeoIP module
+
+
+Linux Commands
+— rpm -qa | grep {moduleName} : Search If the respective module is available to use
+— yum -y install epel-release : install the package which is a repository from where we can download the nginx
+—  yum -y install nginx : cmd to install the nginx
+— yum -y install tcpdump
+— mkdir -p {dirName}: to create the directory
+— netstat -ntlp :  cmd that give the services running and its port information.
+— ctrl x : exit nano
+— touch {filename} : create the files
+— vi {fileName} : File Editor
+— nano {fileName} : File Editor
+— cat /proc/cpuinfo : Provides the CPU info
+— tcpdump -A -vvvv -s 9999 -I echo port 80 > /tmp/headers : captures the packet data sent to port and dumps to headers file
+— cat {fileName} |  wc -l : out puts the number of lines in the mime.types
+— ab -n 20 -c 10 {ipAddress}/ : Apache bench mark command which sends the 20 connections with 10 request concurrently.
+— cp -R {folderToMove} {destLocation} : Copy command
+— rm -rf {itemsToRemove} : Remove/Delete command
+— yum -y install httpd-tools : To install http-tools
+Important Notes:
+ Default.conf is the default configuration file of server which contains all the default setting like port to listen on, location of html etc
+
+cd /etc/nginx/ : directory of nginx where all the important configuration resides
+cd /etc/nginx/conf.d/ : location of conf files
+cd /usr/share/nginx/html : location of default html
+cd /var/log/nginx: location of log error/access
+
