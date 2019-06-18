@@ -1,0 +1,43 @@
+Questions
+1. Reveal Persionality Type Logic ?
+2. Reveal My Fragrance ?  (May be Using Targeter)
+
+Development
+1. Questions page UI & backend Development.
+           a.  UI Fields should be tied to backend and up on form submission(Go to point b) 
+           b.  where to save the the information filled in the form.
+           c.  Do we have to create the new table & repository.
+
+2. Reveal Personality Type & How do you Feel Backend & UI Development.
+           a. When Form is submitted how do we fetch the personality type text.
+           b. How do you Feel Backend (page a & page b). Images should be displayed based on the personality type.
+
+3. Fragrance Finder Summary UI & Backend Development.
+          a. Fetch the products from the repository based on the personality type.
+          b. Render on UI.
+
+4. Add to Cart UI Logic.
+          a. Mostly UI logic
+
+5. CheckOut Flow landing scnerios( Based on the Items in the cart).
+              a. Backend logic to Identify and redirect to respective page(see below scnerio 1 & 2).
+
+6. BasketPage Scnerio UI Logic.
+          a. For scnerio 2 implement UI logic.
+
+7. Order Review (Scnerios A & B).
+         a. Order Review backend logic for acheving scnerio 1 & 2.
+
+8. Shipping Charges Scnerios.
+        a. Backend logic to acheive shipping changes for scnerio 1 & 2
+
+
+Scnerio 
+Scnerio 1. only Fragnace + sample
+                -- Land Directly on Shipping Page
+                -- Shipping Charges should be free
+
+Scnerio  2.  Fragnace + sample + other products
+                -- Land on Basket Page
+                -- Fragnace & sample should not be able to edit.
+                -- Shipping charges logic should be same as current in site 
