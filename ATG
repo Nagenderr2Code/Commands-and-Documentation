@@ -17,27 +17,43 @@ Development
           b. Render on UI.
 
 4. Add to Cart UI Logic.
-          a. Mostly UI logic
+        
+5. Add to Cart Backend Development.
+                  Handling Bundle Products R&D
+                  Display Added products in Rich Cart development(Currently code dont not displays samples in RichCart)
 
-5. CheckOut Flow landing scnerios( Based on the Items in the cart).
-              a. Backend logic to Identify and redirect to respective page(see below scnerio 1 & 2).
+6. CheckOut Flow landing scnerios( Based on the Items in the cart).
+          Question: Requirement says in case of Scnerio 1. User should land on to LogIn page
+                         1. Do we need to land on shipping page if user is already logged In from home page.
+           a. Backend Development to Identify and redirect to respective Flow(see below scnerio 1 & 2).
 
-6. BasketPage Scnerio UI Logic.
-          a. For scnerio 2 implement UI logic.
+7. BasketPage Scnerio UI Logic.
+       Question: If Customer removes the Fragnace sample. Does bounce backCard should also be deleted from cart?
+          a. For scnerio 2 implement UI logic (See Basket Page Scnerio).
+          b. Development to handle add&remove scnerios of Bounce Back Card.
 
-7. Order Review (Scnerios A & B).
-         a. Order Review backend logic for acheving scnerio 1 & 2.
+8. Order Review (Scnerios 1 & 2).
+         a. Order Review backend development for acheving scnerio 1 & 2.
 
-8. Shipping Charges Scnerios.
+9. Shipping Charges Scnerios.
         a. Backend logic to acheive shipping changes for scnerio 1 & 2
 
+10. Need to some research on Point 5 & 8 from Consideration section
 
+Clarifications Required:
+ 1. In Consideration section point 3. Since we are not handling the Questions Page not sure from exactly data should be cleared. Is it stored in any repository.
+ 2. Since we are not handling the Questions Page backend development. Need some clarification from the team who developed this.
+ 3. How does Customer goes back to where he left. Is there any link(Is it through link as mentioned in point 7)?
+ 
 Scnerio 
 Scnerio 1. only Fragnace + sample
                 -- Land Directly on Shipping Page
                 -- Shipping Charges should be free
-
+                
 Scnerio  2.  Fragnace + sample + other products
                 -- Land on Basket Page
                 -- Fragnace & sample should not be able to edit.
-                -- Shipping charges logic should be same as current in site 
+                -- Shipping charges logic should be same as current in site.
+                -- Orders Should be in the order as mentioned in requirement.
+
+Basket Page Scnerio: Fragnace Samples Should be editable
