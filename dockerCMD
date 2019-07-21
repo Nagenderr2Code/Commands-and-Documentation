@@ -73,5 +73,16 @@ Docker Network : DNS . Docker Daemon has a built-in DNS server that containers u
 
 —docker commit {C:name/ID} {commitMessage}: this will take the snapshot of container.
 
+--> docker network create {nameTheNetwork}: creates the network
+
+--> docker image history {imageName}: Provides the history of changes made to specified image
+
+--> docker image inspect {imageName}: Provides the JSON file with information regarding the specified image
+
+--> docker image tag --help: Suggestions are provided regarding the tag command
+--> docker image tag {Sourceimage:tag} {destImage:tag}: new image is create with the same image ID and provided imageName & Tag
+--> docker login : logs-in to docker hub and the authentication ID is stores in JSON
+--> docker logout: logs-out from the docker hub
+--> docker image push {image:tag} or {image}: commits the image to docker hub
 
 
