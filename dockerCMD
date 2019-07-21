@@ -84,5 +84,11 @@ Docker Network : DNS . Docker Daemon has a built-in DNS server that containers u
 --> docker login : logs-in to docker hub and the authentication ID is stores in JSON
 --> docker logout: logs-out from the docker hub
 --> docker image push {image:tag} or {image}: commits the image to docker hub
+--> docker container prune : removes all stoped containers
+--> docker image prune: removes all unused images. which are not linked to any containers
+--> docker image prune -a: removes all unused images. Which are not linked to any contianers.
+--> docker system prune: Will clean up everything
+--> docker system df: To see the space usage.
+
 
 
