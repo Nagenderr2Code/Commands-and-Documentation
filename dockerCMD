@@ -89,6 +89,8 @@ Docker Network : DNS . Docker Daemon has a built-in DNS server that containers u
 --> docker image prune -a: removes all unused images. Which are not linked to any contianers.
 --> docker system prune: Will clean up everything
 --> docker system df: To see the space usage.
-
+--> docker volume inspect {volumeName}: CMD to inspect to specified volume
+--> docker volume ls: list the volumes
+-->  docker container run -d --name mysql1 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -v mysql_vol:/var/lib/mysql mysql : create and assign the volume to mysql
 
 
