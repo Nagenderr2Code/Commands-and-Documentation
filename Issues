@@ -1,0 +1,6 @@
+Issue: Gradle Build Test Failing with Could not create SecurityManager: worker.org.gradle.process.internal.worker.child.BootstrapSecurityManager
+Action: 
+       a. gradle test --info
+       b. gradle --stop
+       c. clear .gradle
+       d. build again
