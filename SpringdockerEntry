@@ -1,0 +1,28 @@
+#!/bin/bash
+echo Your container TIER is: "$TIER"
+
+case "$TIER" in
+      "PROD")
+            LOG_LEVEL="WARN"
+            PRU_ENV="prod"
+      ;;
+      "UAT" | "QA" | "STAGE")
+            LOG_LEVEL="INFO"
+            PRU_ENV=$(echo "$TIER" | tr '[A-Z]' '[a-z]')
+      ;;
+      *)
+            LOG_LEVEL="DEBUG"
+            PRU_ENV="dev"
+      ;;
+esac
+
+echo Your LOG LEVEL  is: "$LOG_LEVEL"
+echo Your PRU_ENV  is: "$PRU_ENV"
+ 
+java -XX:+UseG1GC \
+      -XX:ParallelGCThreads=4 \
+      -XX:ConcGCThreads=1 \
+      -XX:+HeapDumpOnOutOfMemoryError \
+      -Dpru.environment=$PRU_ENV \
+      -Dlog.level=$LOG_LEVEL \
+      -jar /home/application/java/app.jar
