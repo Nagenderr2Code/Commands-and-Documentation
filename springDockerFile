@@ -1,0 +1,30 @@
+FROM gradle:5.2.1-jdk8-alpine as compile 
+COPY . /home/source/java 
+WORKDIR /home/source/java 
+#Default gradle user is `gradle`. We need to add permission on working directory for gradle to build. 
+USER root 
+RUN chown -R gradle /home/source/java 
+USER gradle 
+RUN gradle  build 
+RUN cp docker-entrypoint.sh /home/source/java/build/libs 
+WORKDIR /home/source/java/build/libs 
+RUN jar xvf *.jar 
+RUN ls 
+RUN pwd 
+ 
+ 
+FROM openjdk:8-jre-alpine
+MAINTAINER Shweta Chakravarty <shweta.chakaravarthy@prudential.com>
+
+
+WORKDIR /home/application/java/ 
+ARG PRODUCT=RET-DATAIN-VALIDATION-SVC
+ARG VERSION=1.0.0 
+COPY --from=compile "/home/source/java/build/libs/$PRODUCT-$VERSION.jar" app.jar 
+COPY --from=compile "/home/source/java/build/libs/BOOT-INF/classes/" . 
+COPY --from=compile "/home/source/java/build/libs/docker-entrypoint.sh" . 
+RUN chmod +x docker-entrypoint.sh 
+EXPOSE 8080 
+RUN pwd 
+RUN ls 
+ENTRYPOINT ["sh","./docker-entrypoint.sh"]
